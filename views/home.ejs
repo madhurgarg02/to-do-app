@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <script src="https://kit.fontawesome.com/34df017af4.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <div>
+            
+            <h1 id="page-heading">
+                <i class="fas fa-tasks"></i>
+                To-Do List
+            </h1>
+            <form action="/create-task" method="post">
+                <div>
+                    <h5>Description</h5>
+                    <textarea name="task" name="task" cols="30" rows="10" placeholder="What do you need to do?"></textarea>
+                </div>
+                <div>
+                    <h5>Category</h5>
+                    <!-- <input type="text" name="category"> -->
+                    <select name="category" id="category">
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div>
+                    <h5>Due Date:</h5>
+                    <input type="date" name="date">
+                </div>
+                <button type="submit">Create Task</button>
+            </form>
+            <ul>
+                <% for (let i of task_list) {%>
+                    <li>
+                        <div class="details">
+                            <%= i.task %>  <%= i.category %> <%= i.date %>
+                            <a href="/delete-task/?id=<%= i._id %>">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </div>
+                    </li>
+                <%}%>
+            </ul>
+        </div>
+        <script type="text/javascript" src="/js/home.js"></script>
+    </body>
+</html>
