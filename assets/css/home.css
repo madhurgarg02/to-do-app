@@ -1,3 +1,36 @@
-#page-heading{
+body{
+    font-family: "Poppins",Arial,sans-serif;
+}
+#grid{
+    margin: auto;
     text-align: center;
+    width: 70vw;
+    background-color: blanchedalmond;
+}
+.fields{
+    margin: auto;
+    width: 45vw;
+    text-align: left;
+    background-color: white;
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+#text-area{
+    border: 0px;
+    width: 45vw;
+}
+#parent{
+    display: grid; 
+    grid-template-columns: 1fr 1fr;  
+}
+#create-btn{
+    background: #46b5d1!important;
+    border-color: #46b5d1!important;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    line-height: 1.5;
 }

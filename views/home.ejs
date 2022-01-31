@@ -7,33 +7,35 @@
         <link rel="stylesheet" href="/css/home.css">
     </head>
     <body>
-        <div>
+        <div id="grid">
             
             <h1 id="page-heading">
                 <i class="fas fa-tasks"></i>
-                To-Do List
+                TO-DO APP
             </h1>
             <form action="/create-task" method="post">
-                <div>
-                    <h5>Description</h5>
-                    <textarea name="task" name="task" cols="30" rows="10" placeholder="What do you need to do?"></textarea>
+                <div id="description" class="fields">
+                    <h4>DESCRIPTION</h4>
+                    <textarea name="task" name="task" cols="30" rows="2" placeholder="What do you need to do?" id="text-area"></textarea>
                 </div>
-                <div>
-                    <h5>Category</h5>
-                    <!-- <input type="text" name="category"> -->
-                    <select name="category" id="category">
-                        <option value="Personal">Personal</option>
-                        <option value="Work">Work</option>
-                        <option value="School">School</option>
-                        <option value="Cleaning">Cleaning</option>
-                        <option value="Others">Others</option>
-                    </select>
+                <div class="fields" id="parent">
+                    <div class="field-child">
+                        <h4>CATEGORY</h4>
+                        <!-- <input type="text" name="category"> -->
+                        <select name="category" id="category">
+                            <option value="Personal">Personal</option>
+                            <option value="Work">Work</option>
+                            <option value="School">School</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div class="field-child">
+                        <h4>DUE DATE:</h4>
+                        <input type="date" name="date">
+                    </div>
                 </div>
-                <div>
-                    <h5>Due Date:</h5>
-                    <input type="date" name="date">
-                </div>
-                <button type="submit">Create Task</button>
+                <button type="submit" id="create-btn">CREATE TASK</button>
             </form>
             <ul>
                 <% for (let i of task_list) {%>
