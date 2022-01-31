@@ -1,16 +1,21 @@
 const express =  require('express');
-const path = require('path');
 const port = 8000;
 const app = express();
 
 const db = require('./config/mongoose');
 const Task = require('./models/task');
 
+//setting view engine as express and defining path
 app.set('view engine','ejs');
-app.set('views',path.join(__dirname,'views'));
+app.set('views','./views');
+
+//middleware
 app.use(express.urlencoded({ extended: true }));
+
+//middleware for using static files
 app.use(express.static('assets'));
 
+//controller for rendering home page
 app.get('/',function(req,res){
 
     Task.find({}, function(err, task){
@@ -25,6 +30,7 @@ app.get('/',function(req,res){
     });
 });
 
+//controller for creating task
 app.post('/create-task',function(req,res){
     Task.create(req.body, function(err, newTask){
         if(err){console.log('error in creating a task!');
@@ -35,6 +41,7 @@ app.post('/create-task',function(req,res){
     });
 });
 
+//controller for deleting a task
 app.get('/delete-task',function(req,res){
     let id = req.query.id;
     Task.findByIdAndDelete(id,function(err){
@@ -47,7 +54,7 @@ app.get('/delete-task',function(req,res){
 });
 
 
-
+//setting up the server
 app.listen(port,function(err){
     if(err){
         console.log(`Error occured while setting up the server ${err}`);

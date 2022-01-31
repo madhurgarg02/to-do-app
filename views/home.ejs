@@ -11,18 +11,18 @@
             
             <h1 id="page-heading">
                 <i class="fas fa-tasks"></i>
-                TO-DO APP
+                TO-DO List
             </h1>
             <form action="/create-task" method="post">
                 <div id="description" class="fields">
-                    <h4>DESCRIPTION</h4>
+                    <h4 id="heading">DESCRIPTION:</h4>
                     <textarea name="task" name="task" cols="30" rows="2" placeholder="What do you need to do?" id="text-area"></textarea>
                 </div>
                 <div class="fields" id="parent">
                     <div class="field-child">
-                        <h4>CATEGORY</h4>
-                        <!-- <input type="text" name="category"> -->
+                        <h4 id="heading">CATEGORY:</h4>
                         <select name="category" id="category">
+                            <option value="">Choose a category</option>
                             <option value="Personal">Personal</option>
                             <option value="Work">Work</option>
                             <option value="School">School</option>
@@ -31,24 +31,27 @@
                         </select>
                     </div>
                     <div class="field-child">
-                        <h4>DUE DATE:</h4>
-                        <input type="date" name="date">
+                        <h4 id="heading">DUE DATE:</h4>
+                        <input type="date" name="date" class="unstyled">
                     </div>
                 </div>
-                <button type="submit" id="create-btn">CREATE TASK</button>
+                <button type="submit" id="create-btn">
+                    <i class="fas fa-plus"></i>
+                    ADD TASK
+                </button>
             </form>
-            <ul>
-                <% for (let i of task_list) {%>
-                    <li>
-                        <div class="details">
-                            <%= i.task %>  <%= i.category %> <%= i.date %>
-                            <a href="/delete-task/?id=<%= i._id %>">
-                                <i class="fas fa-times"></i>
-                            </a>
-                        </div>
-                    </li>
-                <%}%>
-            </ul>
+                <ul>
+                    <% for (let i of task_list) {%>
+                        <li>
+                            <div class="details">
+                                <div>Task: <%= i.task %></div>  <div>Category: <%= i.category %></div> <div>Deadline: <%= i.date %></div>
+                                <a href="/delete-task/?id=<%= i._id %>">
+                                    <i class="fas fa-trash" id="delete-btn"></i>
+                                </a>
+                            </div>
+                        </li>
+                    <%}%>
+                </ul>
         </div>
         <script type="text/javascript" src="/js/home.js"></script>
     </body>

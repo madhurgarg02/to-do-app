@@ -1,11 +1,14 @@
 body{
     font-family: "Poppins",Arial,sans-serif;
+    background-color: darkgrey;
 }
 #grid{
     margin: auto;
     text-align: center;
-    width: 70vw;
-    background-color: blanchedalmond;
+    width: 60vw;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .fields{
     margin: auto;
@@ -18,6 +21,7 @@ body{
 #text-area{
     border: 0px;
     width: 45vw;
+    padding-left: 40px;
 }
 #parent{
     display: grid; 
@@ -33,4 +37,73 @@ body{
     user-select: none;
     border: 1px solid transparent;
     line-height: 1.5;
+    margin-top: 16px;
+    font-family: cursive;
+    width: 150px;
+    height: 30px;
 }
+
+li{
+    list-style: none;
+    margin-top: 15px;
+    font-family: cursive;
+    padding-bottom: 10px;
+    width: 55vw;
+    background-clip: padding-box;
+    border: 1px dashed rgba(104, 104, 104, 0.5);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+select{
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    width: 200px;
+    text-align: center;
+    opacity: 70%;
+}
+
+input{
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    font-style: italic;
+    width: 125px;
+    opacity: 70%;
+}
+
+#page-heading{
+    font-family: cursive;
+}
+
+#delete-btn{
+    color: black;
+    opacity: 70%;
+}
+
+#delete-btn:hover{
+    color: red;
+    opacity: 100%;
+}
+
+#heading{
+    font-family: cursive;
+    text-align: center;
+    opacity: 70%;
+}
+
+form{
+    background-clip: padding-box;
+    border: 2px dashed rgba(104, 104, 104, 0.5);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-bottom: 16px;
+}
+/* .unstyled::-webkit-inner-spin-button,
+.unstyled::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+} */
