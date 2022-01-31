@@ -1,6 +1,7 @@
 const express =  require('express');
 const port = 8000;
 const app = express();
+const moment = require("moment");
 
 const db = require('./config/mongoose');
 const Task = require('./models/task');
@@ -14,6 +15,12 @@ app.use(express.urlencoded({ extended: true }));
 
 //middleware for using static files
 app.use(express.static('assets'));
+
+//middleware for formatting date
+app.use((req, res, next)=>{
+    res.locals.moment = moment;
+    next();
+  });
 
 //controller for rendering home page
 app.get('/',function(req,res){
