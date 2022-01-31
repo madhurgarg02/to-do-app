@@ -1,6 +1,9 @@
 body{
     font-family: "Poppins",Arial,sans-serif;
-    background-color: darkgrey;
+    background-image: url(../images/pexels-polina-kovaleva-5546851.jpg);
+    background-size: 100vw 100vh; 
+    background-repeat: no-repeat;
+    
 }
 #grid{
     margin: auto;
@@ -9,6 +12,7 @@ body{
     background-color: white;
     padding-top: 10px;
     padding-bottom: 10px;
+    opacity: 0.7;
 }
 .fields{
     margin: auto;
@@ -28,7 +32,7 @@ body{
     grid-template-columns: 1fr 1fr;  
 }
 #create-btn{
-    background: #46b5d1!important;
+    background: #46b5d1;
     border-color: #46b5d1!important;
     color: #fff;
     display: inline-block;
@@ -41,6 +45,10 @@ body{
     font-family: cursive;
     width: 150px;
     height: 30px;
+}
+
+#create-btn:hover{
+    background-color: turquoise;
 }
 
 li{
@@ -80,18 +88,15 @@ input{
 
 #delete-btn{
     color: black;
-    opacity: 70%;
 }
 
 #delete-btn:hover{
     color: red;
-    opacity: 100%;
 }
 
 #heading{
     font-family: cursive;
     text-align: center;
-    opacity: 70%;
 }
 
 form{
@@ -102,8 +107,12 @@ form{
     border-right: none;
     padding-bottom: 16px;
 }
-/* .unstyled::-webkit-inner-spin-button,
-.unstyled::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-} */
+
+#delete{
+    float: right;
+    width: 8%;
+}
+
+#align{
+    padding-right: 10%;
+}

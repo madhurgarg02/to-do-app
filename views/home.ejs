@@ -44,10 +44,24 @@
                     <% for (let i of task_list) {%>
                         <li>
                             <div class="details">
-                                <div>Task: <%= i.task %></div>  <div>Category: <%= i.category %></div> <div>Deadline: <%= i.date %></div>
-                                <a href="/delete-task/?id=<%= i._id %>">
-                                    <i class="fas fa-trash" id="delete-btn"></i>
-                                </a>
+                                <div id="align">
+                                    <i class="fas fa-thumbtack" id="thumbnails"></i>
+                                    <%= i.task %>
+                                </div> 
+                                <div id="delete">
+                                    <a href="/delete-task/?id=<%= i._id %>">
+                                        <i class="fas fa-trash" id="delete-btn" id="thumbnails"></i>
+                                    </a>
+                                </div>
+                                <div>
+                                    <i class="far fa-id-card"></i>
+                                    <%= i.category %>
+                                </div>
+                                <div id="align">
+                                    <i class="fas fa-hourglass-half" id="thumbnails"></i> 
+                                    <%= moment(i.date).format('Do MMMM, YYYY')  %>
+                                </div>
+                                
                             </div>
                         </li>
                     <%}%>
