@@ -1,31 +1,39 @@
 body{
     font-family: "Poppins",Arial,sans-serif;
-    background-image: url(../images/pexels-polina-kovaleva-5546851.jpg);
-    background-size: 100vw 100vh; 
+    /* background: linear-gradient(
+        rgba(255,255,255,0.5),
+        rgba(255,255,255,0.5)
+    ),
+    url(../images/lum3n--RBuQ2PK_L8-unsplash.jpg); */
+    background-image: url(../images/lum3n--RBuQ2PK_L8-unsplash.jpg);
+    background-size: 205vh 50vw;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     
 }
 #grid{
     margin: auto;
     text-align: center;
     width: 60vw;
-    background-color: white;
+    background-color: transparent;
     padding-top: 10px;
     padding-bottom: 10px;
-    opacity: 0.7;
+    border: 3px solid rgba(0, 0, 0, 0.5);
 }
 .fields{
     margin: auto;
     width: 45vw;
     text-align: left;
-    background-color: white;
-    border: 1px solid grey;
+    background-color: transparent;
+    border: 1px solid black;
     border-collapse: collapse;
 }
 #text-area{
     border: 0px;
     width: 45vw;
     padding-left: 40px;
+    background-color: transparent;
+    color: black;
 }
 #parent{
     display: grid; 
@@ -58,7 +66,7 @@ li{
     padding-bottom: 10px;
     width: 55vw;
     background-clip: padding-box;
-    border: 1px dashed rgba(104, 104, 104, 0.5);
+    border: 1px dashed black;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -71,6 +79,8 @@ select{
     width: 200px;
     text-align: center;
     opacity: 70%;
+    background-color: transparent;
+    color: black;
 }
 
 input{
@@ -80,6 +90,8 @@ input{
     font-style: italic;
     width: 125px;
     opacity: 70%;
+    background-color: transparent;
+    color: black;
 }
 
 #page-heading{
@@ -101,7 +113,7 @@ input{
 
 form{
     background-clip: padding-box;
-    border: 2px dashed rgba(104, 104, 104, 0.5);
+    border: 2px dashed black;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -116,3 +128,4 @@ form{
 #align{
     padding-right: 10%;
 }
+
